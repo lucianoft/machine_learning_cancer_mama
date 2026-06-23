@@ -2,6 +2,13 @@
 
 Predição **benigno vs maligno** com Machine Learning (Breast Cancer Wisconsin) e API REST em Docker.
 
+**Repositório:** https://github.com/lucianoft/machine_learning_cancer_mama
+
+```bash
+git clone https://github.com/lucianoft/machine_learning_cancer_mama.git
+cd machine_learning_cancer_mama
+```
+
 ## Estrutura do projeto
 
 ```
