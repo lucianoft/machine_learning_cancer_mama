@@ -2,10 +2,23 @@
 ## Predição de Câncer de Mama (Wisconsin Diagnostic)
 
 **Projeto:** Sistema de apoio à decisão clínica com Machine Learning  
-**Dataset:** `breast_cancer_wisconsin.csv`  
+**Repositório Git:** https://github.com/lucianoft/machine_learning_cancer_mama  
+**Dataset:** `breast_cancer_wisconsin.csv` (incluso no repositório)  
+**Download alternativo:** [Kaggle - Breast Cancer Wisconsin](https://www.kaggle.com/datasets/uciml/breast-cancer-wisconsin-data/data) | [UCI ML Repository](https://archive.ics.uci.edu/dataset/17/breast+cancer+wisconsin+diagnostic)  
 **Variável alvo:** `diagnosis` (0 = benigno, 1 = maligno)  
-**Referência:** [Kaggle - Breast Cancer Wisconsin](https://www.kaggle.com/datasets/uciml/breast-cancer-wisconsin-data/data)  
 **Notebook:** `Tech_Challenge_Breast_Cancer.ipynb`
+
+### Mapa dos entregáveis (Fase 1)
+
+| Exigência do PDF | Onde está |
+|------------------|-----------|
+| Link do repositório Git | https://github.com/lucianoft/machine_learning_cancer_mama |
+| Código-fonte completo | Repositório (`api/`, notebook, `models/`) |
+| README com instruções | `README.md` |
+| Dockerfile | `Dockerfile` + `docker-compose.yml` |
+| Dataset ou link | `breast_cancer_wisconsin.csv` + links Kaggle/UCI acima |
+| Resultados (prints, gráficos) | `Tech_Challenge_Breast_Cancer.ipynb` (seções 2, 6 e 7) |
+| Relatório técnico | Este arquivo (`RELATORIO_TECNICO.md`) |
 
 ### Contexto clínico
 
