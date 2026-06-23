@@ -21,6 +21,7 @@ desafio/
 ├── api/                                 # Código FastAPI
 ├── models/                              # Pipeline treinada (.pkl)
 ├── postman/                             # Collection para testes
+├── ENTREGA_FASE_1.pdf                   # PDF de entrega (Fase 1)
 ├── Dockerfile
 └── docker-compose.yml
 ```
@@ -44,7 +45,7 @@ docker compose up --build
 
 - API: http://localhost:8000
 - Swagger: http://localhost:8000/docs
-- Postman: `postman/Tech_Challenge_Breast_Cancer.postman_collection.json`
+- Postman: `postman/Tech_Challenge_Breast_Cancer.postman_collection.json` — inclui **30 variáveis** com descrição de cada campo, exemplos benigno/maligno e template para preencher
 
 ### Endpoints
 
@@ -141,10 +142,6 @@ Monte um **único PDF** para a plataforma com:
 4. **Prints** da API: Swagger (`/docs`) e resposta do `POST /predict` (Postman ou curl)  
 5. Resumo do relatório técnico (ou anexe/exporte o `RELATORIO_TECNICO.md` em PDF)
 
-Arquivo gerado: **`ENTREGA_FASE_1.pdf`** (na raiz do projeto). Para regerar:
-
-```bash
-python generate_entrega_pdf.py
-```
+Arquivo de entrega: **`ENTREGA_FASE_1.pdf`** (na raiz do projeto).
 
 > Ferramenta de **apoio à decisão**. Não substitui avaliação médica nem biópsia.

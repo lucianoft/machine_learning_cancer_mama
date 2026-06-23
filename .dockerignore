@@ -5,5 +5,3 @@ venv/
 .ipynb_checkpoints/
 *.csv
 .git/
-scripts/
-.pdf_assets/
