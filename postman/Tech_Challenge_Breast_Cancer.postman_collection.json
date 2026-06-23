@@ -1,0 +1,116 @@
+{
+  "info": {
+    "_postman_id": "b1c2d3e4-breast-cancer-api",
+    "name": "Tech Challenge — Câncer de Mama (API)",
+    "description": "Collection para testar a API REST de classificação **benigno/maligno** (Breast Cancer Wisconsin Diagnostic).\n\n**Pré-requisito:** API rodando em `{{base_url}}`\n\n```bash\ndocker compose up --build\n# ou\nuvicorn api.main:app --reload --port 8000\n```",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:8000"
+    }
+  ],
+  "item": [
+    {
+      "name": "Sistema",
+      "item": [
+        {
+          "name": "Health Check",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/health",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "health"
+              ]
+            },
+            "description": "Verifica se a API e o modelo estão carregados."
+          },
+          "response": []
+        },
+        {
+          "name": "Metadata",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/metadata",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "metadata"
+              ]
+            },
+            "description": "Retorna nome do modelo, colunas de entrada e variável alvo."
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Predição — câncer de mama",
+      "item": [
+        {
+          "name": "Predict — perfil benigno",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"patient\": {\n    \"mean radius\": 13.54,\n    \"mean texture\": 14.36,\n    \"mean perimeter\": 87.46,\n    \"mean area\": 566.3,\n    \"mean smoothness\": 0.09779,\n    \"mean compactness\": 0.08129,\n    \"mean concavity\": 0.06664,\n    \"mean concave points\": 0.04781,\n    \"mean symmetry\": 0.1885,\n    \"mean fractal dimension\": 0.05766,\n    \"radius error\": 0.2699,\n    \"texture error\": 0.7886,\n    \"perimeter error\": 2.058,\n    \"area error\": 23.56,\n    \"smoothness error\": 0.008462,\n    \"compactness error\": 0.0146,\n    \"concavity error\": 0.02387,\n    \"concave points error\": 0.01315,\n    \"symmetry error\": 0.0198,\n    \"fractal dimension error\": 0.0023,\n    \"worst radius\": 15.11,\n    \"worst texture\": 19.26,\n    \"worst perimeter\": 99.7,\n    \"worst area\": 711.2,\n    \"worst smoothness\": 0.144,\n    \"worst compactness\": 0.1773,\n    \"worst concavity\": 0.239,\n    \"worst concave points\": 0.1288,\n    \"worst symmetry\": 0.2977,\n    \"worst fractal dimension\": 0.07259\n  }\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/predict",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "predict"
+              ]
+            },
+            "description": "Amostra com medidas típicas de tumor benigno."
+          },
+          "response": []
+        },
+        {
+          "name": "Predict — perfil maligno",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"patient\": {\n    \"mean radius\": 17.99,\n    \"mean texture\": 10.38,\n    \"mean perimeter\": 122.8,\n    \"mean area\": 1001.0,\n    \"mean smoothness\": 0.1184,\n    \"mean compactness\": 0.2776,\n    \"mean concavity\": 0.3001,\n    \"mean concave points\": 0.1471,\n    \"mean symmetry\": 0.2419,\n    \"mean fractal dimension\": 0.07871,\n    \"radius error\": 1.095,\n    \"texture error\": 0.9053,\n    \"perimeter error\": 8.589,\n    \"area error\": 153.4,\n    \"smoothness error\": 0.006399,\n    \"compactness error\": 0.04904,\n    \"concavity error\": 0.05373,\n    \"concave points error\": 0.01587,\n    \"symmetry error\": 0.03003,\n    \"fractal dimension error\": 0.006193,\n    \"worst radius\": 25.38,\n    \"worst texture\": 17.33,\n    \"worst perimeter\": 184.6,\n    \"worst area\": 2019.0,\n    \"worst smoothness\": 0.1622,\n    \"worst compactness\": 0.6656,\n    \"worst concavity\": 0.7119,\n    \"worst concave points\": 0.2654,\n    \"worst symmetry\": 0.4601,\n    \"worst fractal dimension\": 0.1189\n  }\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/predict",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "predict"
+              ]
+            },
+            "description": "Amostra com medidas típicas de tumor maligno."
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
